@@ -9,6 +9,7 @@ const generator = (...args) => {
         loco: args[2]
     }
 
+    // const { path, topic, loco } = params;
     const { path, topic, loco } = params;
 
     const dirPath = {
@@ -25,13 +26,10 @@ const generator = (...args) => {
 
     const buildContext = {
         context: {
-            topic: topic,
-            locomotive: loco,
+            topic: topic ?? null,
+            locomotive: loco ?? null,
+            interval: 1000 ?? null,
             message: null
-        },
-        timestamps: {
-            created: new Date().toISOString(),
-            updated: new Date().toISOString()
         }
     }
 

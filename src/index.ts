@@ -1,7 +1,11 @@
 import { generator } from './handler/generator';
 import { Argument, Option, Command } from 'commander';
+import { publisher } from './handler/publisher';
+import * as fakerJs from '@faker-js/faker';
+
 export const base_path = __dirname;
 export const config_folder_name = 'config';
+export const faker = fakerJs;
 
 const program = new Command()
 
@@ -17,14 +21,22 @@ program
     .addOption(new Option('-p, --port <port>', 'The port of connection address').default('1883'))
     .addOption(new Option('-u, --username <username>', 'The username for authentication thorugh the broker service').default(null))
     .addOption(new Option('-pwd, --password <password>', 'The password for authentication thorugh the broker service').default(null))
-    .addArgument(new Argument('<path>', 'The path for generated file'))
+    .addArgument(new Argument('<path>', 'The path for generated config file'))
     .addArgument(new Argument('<topic>', 'The topic of message'))
-    .addArgument(new Argument('<loco>', 'The type of locomotive'))
+    .addArgument(new Argument('<loco>', 'The type of locomotive that sending this message'))
     .action(function(...args){
       generator(...args)
     })
 
   program
     .command('publish')
+    .addArgument(new Argument('<path>', 'The file config path for publishing message setup'))
+    .addArgument(new Argument('<topic>', 'The topic of message'))
+    .addArgument(new Argument('<interval>', 'The interval of message tht being published'))
+    .action((...args) => {
+      setInterval(() => {
+        publisher(...args)
+      }, args[2])
+    })
 
 program.parse(process.argv)
