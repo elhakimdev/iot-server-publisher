@@ -26,6 +26,8 @@
   "dependencies": {
     "commander": "^9.4.0",
     "dotenv": "^16.0.1",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.35",
     "mqtt": "^4.3.7",
     "yargs": "^17.1.1-candidate.0"
   }

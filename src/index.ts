@@ -3,6 +3,8 @@ import { Argument, Option, Command } from 'commander';
 import { publisher } from './handler/publisher';
 import * as fakerJs from '@faker-js/faker';
 import * as dotEnv from 'dotenv';
+import * as momentTZ from 'moment-timezone';
+
 
 export const base_path = __dirname;
 export const config_folder_name = 'config';
@@ -21,6 +23,7 @@ export const mqtt_config = {
   qos: process.env.MQTT_QOS as unknown as number,
   retain: process.env.MQTT_RETAIN as unknown as boolean,
 }
+// console.log(momentTZ.tz('Asia/jakarta').format('YYYY-MM-DD HH:mm:ss'))
 
 const program = new Command()
 
