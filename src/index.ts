@@ -40,3 +40,10 @@ program
     })
 
 program.parse(process.argv)
+
+// var process = require('process')
+
+process.on('SIGINT', () => {
+  console.info("Interrupted")
+  process.exit(0)
+})

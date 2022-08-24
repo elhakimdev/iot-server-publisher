@@ -5,7 +5,7 @@ import { base_path, faker } from ".."
 const publisher = (...args) => {
     // console.log(...args)
     const mqtt = require('mqtt')
-    const host = '103.172.204.136'
+    const host = '156.67.210.148'
     const port = '1883'
     const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
     const connectUrl = `mqtt://${host}:${port}`
@@ -147,8 +147,8 @@ const publisher = (...args) => {
         clientId,
         clean: true,
         connectTimeout: 4000,
-        username: 'erka-solusi',
-        password: 'erka-solusi',
+        username: 'riza',
+        password: 'komara',
         reconnectPeriod: 1000,
     })
     const topic = args[1]
