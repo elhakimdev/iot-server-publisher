@@ -1,17 +1,19 @@
 import { readFileSync } from "fs"
-import { base_path, faker } from ".."
+import { base_path, faker, mqtt_config } from ".."
 
 // @ts-ignore
 const publisher = (...args) => {
     // console.log(...args)
     const mqtt = require('mqtt')
-    const host = '156.67.210.148'
-    const port = '1883'
+    const host = mqtt_config.host
+    const port = mqtt_config.port
     const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
     const connectUrl = `mqtt://${host}:${port}`
-    const config = readFileSync(base_path+'/config/' + args[0], {
-        encoding: 'utf-8'
-    })
+
+    // to do implmented post using config
+    // const config = readFileSync(base_path+'/config/' + args[0], {
+    //     encoding: 'utf-8'
+    // })
 
     const context = JSON.stringify({
         locoid: "CC202-11-11",
@@ -146,19 +148,19 @@ const publisher = (...args) => {
     const client = mqtt.connect(connectUrl, {
         clientId,
         clean: true,
-        connectTimeout: 4000,
-        username: 'riza',
-        password: 'komara',
-        reconnectPeriod: 1000,
+        connectTimeout: mqtt_config.connectTimeout,
+        username: mqtt_config.username,
+        password: mqtt_config.password,
+        reconnectPeriod: mqtt_config.reconnectPeriod,
     })
     const topic = args[1]
     client.on('connect', () => {
-        console.log('Connected to broker')
-        client.publish(topic, context, { qos: 0, retain: false }, (error: any) => {
+        console.info(`Successfully connected to broker : [ ${(connectUrl as string)} ]`)
+        client.publish(topic, context, { qos: mqtt_config.qos, retain: mqtt_config.retain }, (error: any) => {
             if (error) {
                 console.error(error)
             }
-            console.log('Success Publishing Data')
+            console.info(`Client : [${clientId}] was publishing message with topic: [ ${(topic as string)} ] to : [ ${(connectUrl as string)} ]`)
         })
 
     })
