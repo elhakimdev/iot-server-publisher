@@ -77,7 +77,7 @@ const publisher = (...args) => {
         "reverser": "FOR",
         "network": "TSEL4G",
         "sigquality": parseFloat((Math.random() * (3.5 - 1.5) + 1.5).toFixed(4)),
-    }, "", 4)
+    }, null, '\t')
 
     const client = mqtt.connect(connectUrl, {
         clientId,
