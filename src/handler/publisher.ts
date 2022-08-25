@@ -87,7 +87,7 @@ const publisher = (...args) => {
         "rpm": faker.faker.datatype.number({min: 1000, max: 100000, precision: 100 }),
         "throttle": faker.faker.datatype.number({ min:1, max: 8, precision: 1 }),
         "reverser": "FOR",
-        "network": "TSEL 2G/3G/4G",
+        "network": "TSEL4G",
         "sigquality": faker.faker.datatype.number({min: 1, max: 5, precision: 1})
     })
 
