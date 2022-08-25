@@ -58,7 +58,10 @@ const publisher = (...args) => {
     const topic = args[1]
     client.on('connect', () => {
         console.info(`Successfully connected to broker : [ ${(connectUrl as string)} on : ${momentTZ.tz('Asia/jakarta').format('YYYY-MM-DD HH:mm:ss')}, zone : ${moment().zoneAbbr()}]`)
-        client.publish(topic, context, { qos: mqtt_config.qos, retain: mqtt_config.retain }, (error: any) => {
+        client.publish(topic, JSON.stringify({
+            hello: "hello",
+            from: "browser"
+        }), { qos: mqtt_config.qos, retain: mqtt_config.retain }, (error: any) => {
             if (error) {
                 console.error(error)
             }
