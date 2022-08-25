@@ -42,8 +42,22 @@ const publisher = (...args) => {
         network: "TSEL 2G/3G/4G",
         sigquality: faker.faker.datatype.number({min: 1, max: 5, precision: 1})
     }
+
+    const stringify = (obj: Object) => {
+        // Iterate over keys, reducing to a string
+        let str = Object.keys(obj).reduce((acc, cur) => {
+            // @ts-ignore
+            let next = `${cur}: "${obj[cur]}"`;
+            return acc
+                ? `${acc}, ${next}`
+                : `{${next}`;
+        }, '');
+        
+        // Return, appending final '}'
+        return `${str}}`;
+    }
     
-    const context = JSON.stringify(payload, null, '\t')
+    const context = stringify(payload)
 
     const client = mqtt.connect(connectUrl, {
         clientId,
