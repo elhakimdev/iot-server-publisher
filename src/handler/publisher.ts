@@ -23,7 +23,7 @@ const publisher = (...args) => {
         client.publish(topic, JSON.stringify({
             // floatingNum: faker.faker.datatype.float({min: 1.5, max:2.7, precision: 0.0001})
             "locoid":"CC-201-11-11 DEV TEST DOCKER",
-            "gpsdatetime":moment().tz('Asia/Jakarta').format("YYYY-MM-DD HH:mm:ss"),
+            "gpsdatetime":momentTZ.tz('Asia/Jakarta').format("YYYY-MM-DD HH:mm:ss"),
             "longitude":faker.faker.address.longitude(),
             "latitude":faker.faker.address.latitude(),
             "speed":faker.faker.datatype.float({min: 1.5, max:2.7, precision: 0.0001}),
