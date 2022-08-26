@@ -48,17 +48,20 @@ const publisher = (...args) => {
             "currtm4":faker.faker.datatype.float({min: 1.5, max:2.7, precision: 0.0001}),
             "currtm5":faker.faker.datatype.float({min: 1.5, max:2.7, precision: 0.0001}),
             "currtm6":faker.faker.datatype.float({min: 1.5, max:2.7, precision: 0.0001}),
-            "rpm":faker.faker.datatype.bigInt({min:1000, max:10000}),
-            "throttle":faker.faker.datatype.bigInt({min:1, max:8}),
+            "rpm": generateRandomInteger(20000),
+            "throttle": generateRandomInteger(8),
             "reverser":"IDLE",
             "network":"4G",
-            "sigquality":faker.faker.datatype.bigInt({min:1, max:5})
+            "sigquality": generateRandomInteger(5)
         }), {qos: 0, retain: false}, (err: any) => {
             if(err) { console.log(err) }
             console.info("Publishing mesage")
         })
 
     })
+}
+const generateRandomInteger = (max: number) => {
+    return Math.floor(Math.random() * max) + 1;
 }
 
 export { publisher }
