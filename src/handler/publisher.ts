@@ -19,22 +19,11 @@ const publisher = (...args) => {
     })
     const topic = args[1]
     client.on('connect', () => {
-        // console.info(`Successfully connected to broker : [ ${(connectUrl as string)} on : ${momentTZ.tz('Asia/jakarta').format('YYYY-MM-DD HH:mm:ss')}, zone : ${moment().zoneAbbr()}]`)
-        // client.publish(topic, JSON.stringify({
-        //     hello: "hello",
-        //     from: "browser"
-        // }), {1}, (error: any) => {
-        //     if (error) {
-        //         console.error(error)
-        //     }
-        //     console.info(`Client : [${clientId}] was publishing message with topic: [ ${(topic as string)} ] to : [ ${(connectUrl as string)} ]`)
-        // })
-
         console.log("Connected")
-
         client.publish(topic, JSON.stringify({
             hallo: "hallo",
-            test: "test"
+            test: "test",
+            floatingNum: faker.faker.datatype.float({min: 1.5, max:2.7, precision: 0.0001})
         }), {qos: 0, retain: false}, (err: any) => {
             if(err) { console.log(err) }
 
