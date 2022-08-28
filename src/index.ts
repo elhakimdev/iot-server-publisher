@@ -21,6 +21,7 @@ export const mqtt_config = {
   reconnectPeriod: process.env.MQTT_RECONNECT_PERIOD as unknown as number,
   qos: process.env.MQTT_QOS as unknown as number,
   retain: process.env.MQTT_RETAIN as unknown as boolean,
+  clientID: process.env.MQTT_CLIENTID as unknown as string
 }
 
 const program = new Command()

@@ -7,7 +7,8 @@ import * as mqtt from "mqtt"
 const publisher = (...args) => {
     const host  = mqtt_config.host;
     const port  = mqtt_config.port;
-    const clientId      = `mqtt_${Math.random().toString(16).slice(3)}`;
+    const clientId      = mqtt_config.clientID;
+    // const clientId      = `mqtt_${Math.random().toString(16).slice(3)}`;
     const connectUrl    = `mqtt://${host}:${port}`;
     const client = mqtt.connect(connectUrl, {
         clientId,
