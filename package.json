@@ -9,7 +9,7 @@
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/index.js",
     "watch": "npx tsc --watch",
-    "publish:message": "node -q build/index.js publish digitalisasi/cc201/fromclient 1000"
+    "publish:message": "node build/index.js publish digitalisasi/cc201/fromclient 1000"
   },
   "keywords": [],
   "author": "",
