@@ -27,21 +27,21 @@ const publisher = (...args) => {
         console.log("Connected")
 
         // # publish dummy data fro CC201
-        client.publish(topic, JSON.stringify(dataSourceGenerator('CC201', 1.0, 1.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-201', 1.0, 1.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
             if(err) { console.log(err) }
-            console.info("CC201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
         })
 
         // # publish dummy data fro CC205
-        client.publish(topic, JSON.stringify(dataSourceGenerator('CC202', 2.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-202', 2.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
             if(err) { console.log(err) }
-            console.info("CC202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
         })
 
         // # publish dummy data fro CC203
-        client.publish(topic, JSON.stringify(dataSourceGenerator('CC203', 3.0, 3.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-203', 3.0, 3.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
             if(err) { console.log(err) }
-            console.info("CC203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
         })
     })
 }
