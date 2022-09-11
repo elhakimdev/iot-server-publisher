@@ -5,7 +5,7 @@
 - input konfiogurasi broker setelah seelesai akan di simpan di satu file di dalam folder /config/broker.json, jika bbaru pertama kali di jalannkan app akan nmeminta inputan unutk konfig ke message broker, namun jika suddah pernah melkkukan konfig, maka app akan memberikan opsi membikin baru konfig atau pakai konfig yag sudah aada
 
 
-# RUN THIS APP ON DOCKER CONTAINER AS A SINGLE NODE JS SCRIPT
+# RUN THIS APP ON DOCKER CONTAINER AS A SINGLE NODE JS SCRIPT 
 - make sure you're has node js installed on the server
 - pull this codebase
 - copy `.env.example` to `.env`
@@ -16,3 +16,9 @@
 - try it : `docker run -it --rm --name generate-config-script -v "$PWD":/usr/src/app -w /usr/src/app node:latest node build/index.js generate-config dev/docker test CC201`, 
 - the generated file will be has a name same as `<context>` arguments and placed inside `<topic>` folder wich is placed in `root-to-our-project/build/dev/docker/` as we defined when generating conffig process
 - after that run publish command, to runnnig publishing fake data: just tell docker to run our generated configuration, example `docker run -it --rm --name publish-script -v "$PWD":/usr/src/app -w /usr/src/app node:latest node build/index.js publish /dev/docker/test/CC201/CC201.json test 1000`
+  
+- # RUN THIS APP ON DOCKER CONTAINER AS A SINGLE NODE JS SCRIPT [UPDATE]
+- just clone / pull from this repo 
+- build this image with command ```docker build -t <image-name> .```
+- after that just run the image as a container within command ```docker run -d --name <container-name>```
+- then just running node js script to publlish message inside the created docker container for this image ex : ```docker exec -it -rm <container-name> /bin/bash```
