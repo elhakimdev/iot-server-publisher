@@ -2,7 +2,7 @@ import * as dotEnv from 'dotenv';
 import * as mqtt from 'mqtt';
 import { MqttClient, IClientOptions } from 'mqtt';
 dotEnv.config();
-export const mqtt_config = {
+export const mqttConfigOptions = {
     host: process.env.MQTT_HOST as unknown as string,
     port: process.env.MQTT_PORT as unknown as string,
     username: process.env.MQTT_USERNAME as unknown as string,
@@ -25,13 +25,13 @@ class MqttService {
 
         this.MqttConnectionConfigOption = {
             clientId: 'mqttjs_' + Math.random().toString(16).slice(3),
-            username: mqtt_config.username,
-            password: mqtt_config.password,
+            username: mqttConfigOptions.username,
+            password: mqttConfigOptions.password,
             clean: true,
             keepalive: 60
         }
 
-        const connectUrl    = `mqtt://${mqtt_config.host}:${mqtt_config.port}`;
+        const connectUrl    = `mqtt://${mqttConfigOptions.host}:${mqttConfigOptions.port}`;
 
         this.MqttConnection = mqtt.connect(connectUrl, this.MqttConnectionConfigOption)
     }
@@ -52,6 +52,8 @@ class MqttService {
 
     /**
      * The public method that usefull to get the current connection instance.
+     * 
+     * use this method to get the current connectioninstancee instead creating  new connection to broker
      */
     public getConnection() : MqttClient {
         return this.MqttConnection;
@@ -59,10 +61,15 @@ class MqttService {
 
     /**
      * The public method that returning Mqtt Config Options.
+     * 
+     * use to see config option
      */
     public getConnectionOption() : IClientOptions {
         return this.MqttConnectionConfigOption;
     }
 }
 
-export { MqttService }
+const Mqtt = MqttService.getInstance();
+const MqttConnection = Mqtt.getConnection();
+
+export { Mqtt, MqttConnection }     

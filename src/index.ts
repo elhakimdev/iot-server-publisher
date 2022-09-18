@@ -3,7 +3,7 @@ import { Argument, Command } from 'commander';
 import { publisher } from './handler/publisher';
 import * as fakerJs from '@faker-js/faker';
 import * as dotEnv from 'dotenv';
-import { MqttService } from './services/mqtt';
+import { MqttConnection } from './services/mqtt';
 
 
 
@@ -28,6 +28,10 @@ export const mqtt_config = {
 
 const program = new Command()
 
+MqttConnection.on("error", (error) => {
+  console.log("Mqtt Error" + error.message)
+})
+
 program
   .name('mqtt')
   .description('CLI to implement MQTT Publisher Service Mockup For Iot project')
@@ -38,7 +42,7 @@ program
     .addArgument(new Argument('<topic>', 'The topic of message'))
     .addArgument(new Argument('<interval>', 'The interval of message tht being published'))
     .action((...args) => {
-      MqttService.getInstance().getConnection().on("connect", () => {
+      MqttConnection.on("connect", () => {
         setInterval(() => {
           publisher(...args)
         }, args[1])
