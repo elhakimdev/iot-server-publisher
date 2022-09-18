@@ -1,10 +1,9 @@
 
-import { Argument, Option, Command } from 'commander';
-import { dataSourceGenerator, publisher } from './handler/publisher';
+import { Argument, Command } from 'commander';
+import { publisher } from './handler/publisher';
 import * as fakerJs from '@faker-js/faker';
 import * as dotEnv from 'dotenv';
 import { MqttService } from './services/mqtt';
-import * as momentTZ from 'moment-timezone';
 
 
 
@@ -39,18 +38,11 @@ program
     .addArgument(new Argument('<topic>', 'The topic of message'))
     .addArgument(new Argument('<interval>', 'The interval of message tht being published'))
     .action((...args) => {
-      setInterval(() => {
-        publisher(...args)
-      }, args[1])
-    })
-
-  program.command('check-singleton')
-    .action((...args) => {
-      const checkSingleton = {
-        client1: MqttService.getInstance().getConnectionOption(),
-        client2: MqttService.getInstance().getConnectionOption()
-      }
-      console.log(checkSingleton.client1 === checkSingleton.client2) // check to cconnection instance to prevent multiple connection when publishing mmultiple message to broker
+      MqttService.getInstance().getConnection().on("connect", () => {
+        setInterval(() => {
+          publisher(...args)
+        }, args[1])
+      })
     })
 
 program.parse(process.argv)
