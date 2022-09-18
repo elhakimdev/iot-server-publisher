@@ -24,22 +24,256 @@ const publisher = (...args) => {
     })
 
     client.on('connect', () => {
-        console.log("Connected")
-
         // # publish dummy data fro CC201
         client.publish(topic, JSON.stringify(dataSourceGenerator('CC-201', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
             if(err) { console.log(err) }
             console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
         })
-
         // # publish dummy data fro CC205
         client.publish(topic, JSON.stringify(dataSourceGenerator('CC-202', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
             if(err) { console.log(err) }
             console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
         })
-
         // # publish dummy data fro CC203
         client.publish(topic, JSON.stringify(dataSourceGenerator('CC-203', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-204', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-205', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC201
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-206', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC205
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-207', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-208', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-209', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2010', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+
+        // # publish dummy data fro CC201
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2011', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC205
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2012', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2013', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2014', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2015', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC201
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2016', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC205
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2017', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2018', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2019', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2020', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })        // # publish dummy data fro CC201
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2021', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC205
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2022', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2023', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2024', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2025', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC201
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2026', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC205
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2027', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2028', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2029', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2030', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+
+        // # publish dummy data fro CC201
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2031', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC205
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2032', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2033', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2034', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2035', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC201
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2036', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC205
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2037', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2038', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2039', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2040', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+
+        // # publish dummy data fro CC201
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2041', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC205
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2042', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2043', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2044', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2045', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC201
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2046', 1.0, 2.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-201 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC205
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2047', 3.0, 5.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-202 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2048', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2049', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
+            if(err) { console.log(err) }
+            console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
+        })
+        // # publish dummy data fro CC203
+        client.publish(topic, JSON.stringify(dataSourceGenerator('CC-2050', 6.0, 8.9, 0.001)), {qos: 0, retain: false}, (err: any) => {
             if(err) { console.log(err) }
             console.info("CC-203 sensor dummy message Succesfully Published at : " + momentTZ.tz('Asia/jakarta').toLocaleString())
         })
