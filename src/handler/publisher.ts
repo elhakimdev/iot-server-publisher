@@ -1,6 +1,7 @@
 import { faker, mqtt_config } from "..";
 import * as momentTZ from 'moment-timezone';
 import * as mqtt from "mqtt"
+import { MqttService } from "../services/mqtt";
 
 // @ts-ignore
 const publisher = (...args) => {
@@ -14,13 +15,14 @@ const publisher = (...args) => {
         username: mqtt_config.username,
         password: mqtt_config.password,
     })
-    const topic = args[0]
-    client.on('error', (cb) => {
-      console.log(cb.message, cb.stack, cb.name)
+    const topic = args[0];
+
+    client.on("error", (err) => {
+        console.log(err.message, err.stack, err.name)
     })
 
-    client.on('close', () => {
-        console.log('closed')
+    client.on("close", () => {
+        console.log("connection close")
     })
 
     client.on('connect', () => {
@@ -279,12 +281,12 @@ const publisher = (...args) => {
         })
     })
 }
-const generateRandomInteger = (max: number) => {
+export const generateRandomInteger = (max: number) => {
     return Math.floor(Math.random() * max) + 1;
 }
 
 
-const dataSourceGenerator = function(
+export const dataSourceGenerator = function(
     locoId: string,
     minRange: number,
     maxRange: number,
