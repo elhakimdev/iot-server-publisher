@@ -29,7 +29,15 @@ export const mqtt_config = {
 const program = new Command()
 
 MqttConnection.on("error", (error) => {
-  console.log("Mqtt Error" + error.message)
+  console.log("Mqtt Error " + error.message) // hanldee when conneection error here
+})
+
+MqttConnection.on("disconnect", (packet) => {
+  console.log("Mqtt Connection Was Disconnected") // hanldee when disconneect here
+})
+
+MqttConnection.on("close", () => {
+  console.log("Mqtt Connection Was Closed") // hanldee when conneection close here
 })
 
 program
